@@ -86,26 +86,6 @@ public class Logged extends AppCompatActivity implements View.OnClickListener {
         btnProfile = findViewById(R.id.buttonProfile);
         btnProfile.setOnClickListener( this);
 
-        LocalDate today = LocalDate.now();
-        String params = "?localDate="+ today + "&login=" + loggedUser.getLogin();
-
-        Request request = new Request.Builder()
-                .url(URL+"/details"+params)
-                .build();
-
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(@NotNull Call call, @NotNull IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                if(response.isSuccessful()){
-                    setData(response.body().string(), today.toString());
-                }
-            }
-        });
 
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -132,6 +112,39 @@ public class Logged extends AppCompatActivity implements View.OnClickListener {
                     }
                 });
 
+            }
+        });
+
+    }
+
+    // wymaga to LocalDate
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        String requestData;
+        if(myDate.getText().toString().equals("Data")){
+            requestData = LocalDate.now().toString();
+        }else{
+            requestData = myDate.getText().toString();
+        }
+        String params = "?localDate="+ requestData + "&login=" + loggedUser.getLogin();
+
+        Request request = new Request.Builder()
+                .url(URL+"/details"+params)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                if(response.isSuccessful()){
+                    setData(response.body().string(), requestData);
+                }
             }
         });
 

@@ -10,21 +10,16 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.mylogowanie.DTO.AddMealDTO;
-import com.example.mylogowanie.DTO.AddProduct;
+import com.example.mylogowanie.DTO.AddProductDTO;
 import com.example.mylogowanie.DTO.ProductRepresentation;
 import com.example.mylogowanie.DTO.UserRepresentation;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -87,6 +82,7 @@ public class AddFood extends AppCompatActivity implements View.OnClickListener {
 
     }
 
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onClick(View v) {
@@ -102,10 +98,10 @@ public class AddFood extends AppCompatActivity implements View.OnClickListener {
             Float protein = Float.parseFloat(proteinText.getText().toString());
             Float carbs = Float.parseFloat(carbsText.getText().toString());
 
-            AddProduct addProduct = new AddProduct(nameOfProduct, carbs, fat, protein);
+            AddProductDTO addProductDTO = new AddProductDTO(nameOfProduct, carbs, fat, protein);
 
 
-            String jsonObject = gson.toJson(addProduct);
+            String jsonObject = gson.toJson(addProductDTO);
             RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), jsonObject);
 
             Request request = new Request.Builder()
@@ -123,10 +119,14 @@ public class AddFood extends AppCompatActivity implements View.OnClickListener {
 
                 @Override
                 public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                    System.out.println("Dodano do bazy");
+                    System.out.println("Dodano do bazy produkt");
+                    products.add(addProductDTO.getName());
+                    name.setText("");
+                    proteinText.setText("");
+                    carbsText.setText("");
+                    fatText.setText("");
                 }
             });
-
 
 
         }
@@ -162,6 +162,8 @@ public class AddFood extends AppCompatActivity implements View.OnClickListener {
                 @Override
                 public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                     System.out.println("Dodano posiłem dla usera");
+                    editText.setText("");
+                    weightProduct.setText("");
                 }
             });
 

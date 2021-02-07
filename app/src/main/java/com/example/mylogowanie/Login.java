@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import org.apache.commons.codec.digest.DigestUtils;
 import org.jetbrains.annotations.NotNull;;
 import java.io.IOException;
 
@@ -50,7 +52,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             String login = loginInput.getText().toString();
             String password = passwordInput.getText().toString();
 
-            String params = "?login="+ login + "&password=" + password;
+            String sha256Password = DigestUtils.sha256Hex(password);
+
+            String params = "?login="+ login + "&password=" + sha256Password;
             Request request = new Request.Builder()
                     .url(URL+"/login"+params)
                     .build();

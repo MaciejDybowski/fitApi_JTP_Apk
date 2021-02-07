@@ -1,12 +1,12 @@
 package com.example.mylogowanie.DTO;
 
-public class AddProduct {
+public class AddProductDTO {
     private String name;
     private float carbo;
     private float fat;
     private float protein;
 
-    public AddProduct(String name, float carbo, float fat, float protein) {
+    public AddProductDTO(String name, float carbo, float fat, float protein) {
         this.name = name;
         this.carbo = carbo;
         this.fat = fat;

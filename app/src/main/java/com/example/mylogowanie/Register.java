@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.mylogowanie.DTO.AddUserDTO;
 import com.google.gson.Gson;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -55,8 +56,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             EditText height = (EditText)findViewById(R.id.height);
             EditText weight = (EditText)findViewById(R.id.wegiht);
 
+            String sha256Password = DigestUtils.sha256Hex(password.getText().toString());
+
             userToAdd.setLogin(login.getText().toString());
-            userToAdd.setPassword(password.getText().toString());
+            userToAdd.setPassword(sha256Password);
             userToAdd.setFirstName(name.getText().toString());
             userToAdd.setLastName(surname.getText().toString());
             userToAdd.setAge(Integer.parseInt(age.getText().toString()));

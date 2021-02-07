@@ -2,10 +2,10 @@ package com.example.mylogowanie.DTO;
 
 public class DaySummary {
     private int water;
-    private float protein;
-    private float carbs;
-    private float fat;
-    private float totalCalory;
+    private int protein;
+    private int carbs;
+    private int fat;
+    private int totalCalory;
 
     public int getWater() {
         return water;
@@ -15,35 +15,35 @@ public class DaySummary {
         this.water = water;
     }
 
-    public float getProtein() {
+    public int getProtein() {
         return protein;
     }
 
-    public void setProtein(float protein) {
+    public void setProtein(int protein) {
         this.protein = protein;
     }
 
-    public float getCarbs() {
+    public int getCarbs() {
         return carbs;
     }
 
-    public void setCarbs(float carbs) {
+    public void setCarbs(int carbs) {
         this.carbs = carbs;
     }
 
-    public float getFat() {
+    public int getFat() {
         return fat;
     }
 
-    public void setFat(float fat) {
+    public void setFat(int fat) {
         this.fat = fat;
     }
 
-    public float getTotalCalory() {
+    public int getTotalCalory() {
         return totalCalory;
     }
 
-    public void setTotalCalory(float totalCalory) {
+    public void setTotalCalory(int totalCalory) {
         this.totalCalory = totalCalory;
     }
 }
