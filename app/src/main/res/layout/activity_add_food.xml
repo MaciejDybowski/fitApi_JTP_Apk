@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="25dp"
+    android:layout_height="match_parent"
+    tools:context=".AddFood"
+    android:orientation="vertical"
+    >
+
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nazwa produktu:"
+        android:textSize="20dp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/Products"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wybierz produkt"
+        android:completionThreshold="1"
+        />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Waga produktu [g]"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/weightOfProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/addMeal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zatwierdź posiłek" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView34"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dodaj produkt spoza listy"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nazwa:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/nameOfProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nazwa produktu"
+        />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Białko /100g:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/productProtein"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Węglowodany/100g:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/productCarbs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tłuszcz/100g:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/productFat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/addProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dodaj produkt" />
+
+
+</LinearLayout>

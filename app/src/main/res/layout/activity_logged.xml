@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/design_default_color_primary_dark"
+    android:orientation="vertical"
+    tools:context=".Logged">
+
+
+    <TextView
+        android:id="@+id/myDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity=""
+        android:layout_marginVertical="25dp"
+        android:gravity="center_horizontal"
+        android:text="Data"
+        android:textColor="#FFF"
+        android:textSize="23sp" />
+
+
+    <CalendarView
+
+        android:id="@+id/calendarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#FFF"
+
+        >
+
+    </CalendarView>
+
+    <TextView
+        android:id="@+id/myProtein"
+        android:layout_width="159dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:text="Białko:"
+        android:textColor="#FFF" />
+
+    <ProgressBar
+        android:id="@+id/progresProtein"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp" />
+
+    <TextView
+        android:id="@+id/myCarbo"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:text="Węglowodany:"
+        android:textColor="#FFF" />
+
+    <ProgressBar
+        android:id="@+id/progresCarbo"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp" />
+
+    <TextView
+        android:id="@+id/myFat"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:text="Tłuszcze:"
+        android:textColor="#FFF" />
+
+    <ProgressBar
+        android:id="@+id/progresFat"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="Profil" />
+
+        <Button
+            android:id="@+id/buttonFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="Dodaj Posiłek" />
+    </LinearLayout>
+
+
+</LinearLayout>
